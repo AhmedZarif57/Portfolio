@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zarif | CSE Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Zarif - CSE undergraduate passionate about building impactful projects and mastering development.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="terminal-loading">
+                <div class="loading-text">
+                    <span class="prompt">></span> <span class="typing-text">INITIALIZING SYSTEM...</span>
+                </div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <div class="loading-files">
+                    <div class="file-line">// LOADING PORTFOLIO_DATA</div>
+                    <div class="file-line">// RENDERING PROJECTS.JS</div>
+                    <div class="file-line">// COMPILING SKILLS.CSS</div>
+                </div>
+            </div>
+            <div class="geometric-loader">
+                <div class="cube"></div>
+                <div class="cube"></div>
+                <div class="cube"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <svg class="logo-icon" viewBox="0 0 50 50" fill="none">
+                        <path d="M10 10 L40 10 L40 40 L25 40 L25 25 L10 25 Z" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17.5" cy="17.5" r="2" fill="currentColor"/>
+                    </svg>
+                    <span class="logo-text">ZARIF.DEV</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-number">01.</span>
+                    <span class="nav-text">HOME</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <span class="nav-number">02.</span>
+                    <span class="nav-text">ABOUT</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <span class="nav-number">03.</span>
+                    <span class="nav-text">PROJECTS</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <span class="nav-number">04.</span>
+                    <span class="nav-text">SKILLS</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <span class="nav-number">05.</span>
+                    <span class="nav-text">CONTACT</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <div class="nav-progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </nav>
+
+    <!-- Cursor -->
+    <div class="custom-cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="grid-overlay"></div>
+                <div class="gradient-blob blob-1"></div>
+                <div class="gradient-blob blob-2"></div>
+                <div class="gradient-blob blob-3"></div>
+                <canvas id="particleCanvas"></canvas>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                            <span class="terminal-title">zarif@portfolio:~$</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="terminal-line">
+                                <span class="prompt">></span> 
+                                <span class="command">cat introduction.txt</span>
+                            </p>
+                            <p class="terminal-output">Hello World! I'm</p>
+                        </div>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">
+                            <span class="glitch" data-text="ZARIF">ZARIF</span>
+                        </span>
+                        <span class="title-line">
+                            <span class="gradient-text">DEVELOPER</span>
+                        </span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="bracket">{</span> CSE undergraduate with an eye for building things that actually work 
+                        and a habit of taking on projects that should probably be classified as cardio <span class="bracket">}</span>
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span class="btn-content">
+                                <span class="btn-text">VIEW PROJECTS</span>
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </span>
+                            <span class="btn-bg"></span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span class="btn-content">
+                                <span class="btn-text">GET IN TOUCH</span>
+                            </span>
+                            <span class="btn-bg"></span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="1000">0</div>
+                            <div class="stat-label">Commits Made</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="24">0</div>
+                            <div class="stat-label">Hours Coding</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-text">SCROLL</div>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-number">02</div>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        ABOUT_ME
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="text-block">
+                            <h3 class="text-title">
+                                <span class="code-symbol">//</span> What Drives Me
+                            </h3>
+                            <p class="text-description">
+                                Always chasing improvement, learning new skills, and occasionally questioning life choices 
+                                during late-night coding sessions. Still, this is exactly the kind of energy that shapes great engineers.
+                            </p>
+                        </div>
+                        <div class="text-block">
+                            <h3 class="text-title">
+                                <span class="code-symbol">//</span> My Goals
+                            </h3>
+                            <ul class="goal-list">
+                                <li class="goal-item">
+                                    <span class="goal-icon">▹</span>
+                                    <span>Build impactful projects</span>
+                                </li>
+                                <li class="goal-item">
+                                    <span class="goal-icon">▹</span>
+                                    <span>Master the tools of the trade</span>
+                                </li>
+                                <li class="goal-item">
+                                    <span class="goal-icon">▹</span>
+                                    <span>Keep growing, experimenting, and outsmarting the bugs</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text-block">
+                            <h3 class="text-title">
+                                <span class="code-symbol">//</span> Quick Facts
+                            </h3>
+                            <div class="fact-grid">
+                                <div class="fact-item">
+                                    <span class="fact-label">Name:</span>
+                                    <span class="fact-value">Zarif</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Field:</span>
+                                    <span class="fact-value">Computer Science & Engineering</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Strengths:</span>
+                                    <span class="fact-value">Problem-solving, debugging</span>
+                                </div>
+                                <div class="fact-item">
+                                    <span class="fact-label">Interests:</span>
+                                    <span class="fact-value">Tech, development, innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="visual-container">
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <div class="code-tabs">
+                                        <div class="code-tab active">zarif.js</div>
+                                    </div>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Zarif"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"CSE Student"</span>,
+  <span class="code-property">location</span>: <span class="code-string">"Building the Future"</span>,
+  <span class="code-property">skills</span>: [
+    <span class="code-string">"JavaScript"</span>,
+    <span class="code-string">"Python"</span>,
+    <span class="code-string">"Java"</span>,
+    <span class="code-string">"Problem Solving"</span>
+  ],
+  <span class="code-property">currentFocus</span>: <span class="code-string">"Full-Stack Development"</span>,
+  <span class="code-property">funFact</span>: <span class="code-string">"Debugging = cardio"</span>
+};</code></pre>
+                                </div>
+                            </div>
+                            <div class="geometric-decoration">
+                                <div class="geo-shape shape-1"></div>
+                                <div class="geo-shape shape-2"></div>
+                                <div class="geo-shape shape-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-number">03</div>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        FEATURED_PROJECTS
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="project-number">01</div>
+                        <div class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="image-placeholder">
+                                <svg viewBox="0 0 200 200" fill="none">
+                                    <rect width="200" height="200" fill="url(#gradient1)"/>
+                                    <path d="M50 100 L100 50 L150 100 L100 150 Z" stroke="white" stroke-width="2" fill="none"/>
+                                    <defs>
+                                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#00f5ff"/>
+                                            <stop offset="100%" style="stop-color:#7b2ff7"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">
+                                A full-stack e-commerce solution with real-time inventory management, 
+                                secure payment processing, and responsive design. Built for scalability.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>VIEW PROJECT</span>
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="project-number">02</div>
+                        <div class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="image-placeholder">
+                                <svg viewBox="0 0 200 200" fill="none">
+                                    <rect width="200" height="200" fill="url(#gradient2)"/>
+                                    <circle cx="100" cy="100" r="40" stroke="white" stroke-width="2" fill="none"/>
+                                    <path d="M100 60 L100 100 L130 100" stroke="white" stroke-width="2"/>
+                                    <defs>
+                                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#f72585"/>
+                                            <stop offset="100%" style="stop-color:#7209b7"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Task Management Dashboard</h3>
+                            <p class="project-description">
+                                Intuitive task tracker with drag-and-drop functionality, team collaboration features, 
+                                and real-time updates. Perfect for agile teams.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Tailwind</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>VIEW PROJECT</span>
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="project-number">03</div>
+                        <div class="project-image">
+                            <div class="project-overlay"></div>
+                            <div class="image-placeholder">
+                                <svg viewBox="0 0 200 200" fill="none">
+                                    <rect width="200" height="200" fill="url(#gradient3)"/>
+                                    <path d="M60 100 L100 60 L140 100 L100 140 Z M80 100 L100 80 L120 100 L100 120 Z" 
+                                          stroke="white" stroke-width="2" fill="none"/>
+                                    <defs>
+                                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#06ffa5"/>
+                                            <stop offset="100%" style="stop-color:#059669"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">AI-Powered Code Assistant</h3>
+                            <p class="project-description">
+                                Smart code completion and refactoring tool using machine learning. 
+                                Helps developers write cleaner, more efficient code faster.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">FastAPI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <span>VIEW PROJECT</span>
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-number">04</div>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        TECH_STACK
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-content">
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">{"</>"}</span>
+                            Frontend Development
+                        </h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">JS</div>
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">⚛️</div>
+                                <div class="skill-name">React</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🎨</div>
+                                <div class="skill-name">CSS/Tailwind</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">{"⚙"}</span>
+                            Backend Development
+                        </h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">🐍</div>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="87"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">☕</div>
+                                <div class="skill-name">Java</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="82"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🟢</div>
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">{"🗄"}</span>
+                            Database & Tools
+                        </h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">🍃</div>
+                                <div class="skill-name">MongoDB</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="83"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🐙</div>
+                                <div class="skill-name">Git</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="89"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🐳</div>
+                                <div class="skill-name">Docker</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-number">05</div>
+                    <h2 class="section-title">
+                        <span class="title-bracket">[</span>
+                        GET_IN_TOUCH
+                        <span class="title-bracket">]</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="terminal-contact">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                                <span class="terminal-title">contact.sh</span>
+                            </div>
+                            <div class="terminal-body">
+                                <p class="terminal-line">
+                                    <span class="prompt">></span> 
+                                    <span class="command">./connect.sh --developer=zarif</span>
+                                </p>
+                                <p class="terminal-output">
+                                    <span class="output-label">STATUS:</span> Available for opportunities
+                                </p>
+                                <p class="terminal-output">
+                                    <span class="output-label">RESPONSE_TIME:</span> Usually within 24h
+                                </p>
+                                <p class="terminal-output">
+                                    <span class="output-label">INTERESTS:</span> Full-time, Freelance, Collaboration
+                                </p>
+                            </div>
+                        </div>
+                        <p class="contact-description">
+                            Whether you have a project in mind, need a problem solver, or just want to chat about tech, 
+                            I'm always open to new opportunities and conversations.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:zarif@example.com" class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+                                              stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-label">Email</div>
+                                    <div class="method-value">zarif@example.com</div>
+                                </div>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" 
+                                              stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-label">GitHub</div>
+                                    <div class="method-value">@zarif</div>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" 
+                                              stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-label">LinkedIn</div>
+                                    <div class="method-value">Zarif</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    <span class="label-text">Name</span>
+                                    <span class="label-required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <span class="label-text">Email</span>
+                                    <span class="label-required">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">
+                                    <span class="label-text">Subject</span>
+                                </label>
+                                <input type="text" id="subject" name="subject" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">
+                                    <span class="label-text">Message</span>
+                                    <span class="label-required">*</span>
+                                </label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <span class="btn-content">
+                                    <span class="btn-text">SEND MESSAGE</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+                                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </span>
+                                <span class="btn-bg"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 50 50" fill="none">
+                            <path d="M10 10 L40 10 L40 40 L25 40 L25 25 L10 25 Z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="17.5" r="2" fill="currentColor"/>
+                        </svg>
+                        <span class="logo-text">ZARIF.DEV</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Building the future, one line of code at a time.
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#projects" class="footer-link">Projects</a>
+                        <a href="#skills" class="footer-link">Skills</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    <span class="copyright-symbol">©</span> 2025 Zarif. All rights reserved.
+                </p>
+                <p class="footer-made">
+                    Designed & Built with <span class="heart">♥</span> and lots of coffee
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
