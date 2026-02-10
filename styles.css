@@ -416,6 +416,7 @@ body.loading {
     font-size: 1.5rem;
     color: var(--text-dim);
     margin-bottom: 1rem;
+    white-space: nowrap;
 }
 
 .hero-description {
@@ -586,10 +587,16 @@ section {
 
 /* About Section */
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 3rem;
-    align-items: start;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
 }
 
 .about-text p {
@@ -598,15 +605,157 @@ section {
     line-height: 1.8;
 }
 
-.about-stats-container {
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(
+        20px 0,
+        100% 0,
+        100% calc(100% - 20px),
+        100% 100%,
+        0 100%,
+        0 20px
+    );
+    animation: imageGlitch 8s ease-in-out infinite;
+}
+
+.frame-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3), inset 0 0 15px rgba(0, 255, 136, 0.1);
+    z-index: 3;
+    pointer-events: none;
+    animation: borderPulse 3s ease-in-out infinite;
+}
+
+.frame-corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent);
+    z-index: 4;
+    pointer-events: none;
+}
+
+.frame-corner-tl {
+    top: -5px;
+    left: -5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.frame-corner-tr {
+    top: -5px;
+    right: -5px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.frame-corner-bl {
+    bottom: -5px;
+    left: -5px;
+    border-right: none;
+    border-top: none;
+}
+
+.frame-corner-br {
+    bottom: -5px;
+    right: -5px;
+    border-left: none;
+    border-top: none;
+}
+
+.glitch-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.05) 50%, transparent 100%);
+    animation: glitchScan 4s linear infinite;
+    z-index: 5;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+@keyframes imageGlitch {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 rgba(0, 255, 136, 0));
+        transform: translate(0, 0);
+    }
+    15% {
+        filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.3));
+        transform: translate(2px, -2px);
+    }
+    30% {
+        filter: drop-shadow(-2px 2px 4px rgba(0, 0, 255, 0.3));
+        transform: translate(-2px, 2px);
+    }
+    45% {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5));
+        transform: translate(0, 0);
+    }
+    60% {
+        filter: drop-shadow(2px -2px 4px rgba(255, 0, 0, 0.2));
+        transform: translate(1px, -1px);
+    }
+    75% {
+        filter: drop-shadow(-2px -2px 4px rgba(0, 255, 136, 0.3));
+        transform: translate(-1px, -1px);
+    }
+    90% {
+        filter: drop-shadow(1px 1px 4px rgba(0, 255, 136, 0.4));
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.3), inset 0 0 15px rgba(0, 255, 136, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.6), inset 0 0 25px rgba(0, 255, 136, 0.2);
+    }
+}
+
+@keyframes glitchScan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.about-stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .about-stats {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     width: 100%;
 }
@@ -1721,11 +1870,11 @@ section {
     }
 
     .about-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .about-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
     
     .skills-grid {
@@ -1780,6 +1929,10 @@ section {
         font-size: 2.5rem;
     }
 
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
     .hero-buttons {
         flex-direction: column;
         width: 100%;
@@ -1787,6 +1940,10 @@ section {
 
     .btn {
         width: 100%;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
     }
     
     .projects-grid {
