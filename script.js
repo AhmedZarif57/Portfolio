@@ -114,6 +114,64 @@ function initCursorTrail() {
 }
 
 // ===============================================
+// CLICK SOUND EFFECTS
+// ===============================================
+function playClickSound() {
+    // Create an audio context and oscillator for a click-like sound
+    try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.1);
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.1);
+    } catch (e) {
+        console.log('Audio context not available');
+    }
+}
+
+function playSuccessSound() {
+    try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const notes = [
+            { freq: 523.25, duration: 0.1 },  // C5
+            { freq: 659.25, duration: 0.1 },  // E5
+            { freq: 783.99, duration: 0.2 }   // G5
+        ];
+        
+        let startTime = audioContext.currentTime;
+        
+        notes.forEach(note => {
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            
+            osc.frequency.setValueAtTime(note.freq, startTime);
+            gain.gain.setValueAtTime(0.3, startTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, startTime + note.duration);
+            
+            osc.start(startTime);
+            osc.stop(startTime + note.duration);
+            
+            startTime += note.duration;
+        });
+    } catch (e) {
+        console.log('Audio context not available');
+    }
+}
+
+// ===============================================
 // RIPPLE EFFECT ON CLICK
 // ===============================================
 function createRipple(e) {
@@ -141,7 +199,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const rippleElements = document.querySelectorAll('.btn, .project-card, .achievement-card, .skill-category, .tech-item');
     
     rippleElements.forEach(element => {
-        element.addEventListener('click', createRipple);
+        element.addEventListener('click', (e) => {
+            createRipple(e);
+            playClickSound();
+        });
+    });
+});
+
+// Add click sound to nav links
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link, a[href^=\"#\"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', playClickSound);
     });
 });
 
@@ -530,6 +599,7 @@ if (contactForm) {
 }
 
 function showSuccessModal() {
+    playSuccessSound();
     successModal.classList.add('active');
 }
 
