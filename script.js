@@ -148,19 +148,49 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
+const navLogo = document.getElementById('navLogo');
 const navLinks = document.querySelectorAll('.nav-link');
 
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+// Ensure elements exist
+if (!navToggle || !navMenu) {
+    console.error('Navigation elements not found');
+}
+
+// Logo click handler for secret message
+if (navLogo) {
+    navLogo.addEventListener('click', (e) => {
+        // Don't toggle menu when clicking logo on mobile
+        if (window.innerWidth <= 768) {
+            e.stopPropagation();
+        }
+        showSecretModal();
+    });
+}
+
+if (navToggle) {
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close menu when clicking a link
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
     });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navToggle && navMenu && navToggle.classList.contains('active')) {
+        if (!e.target.closest('nav')) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    }
 });
 
 // Smooth scroll for all anchor links
@@ -457,21 +487,92 @@ function createScrollProgress() {
 // FORM SUBMISSION
 // ===============================================
 const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const successModal = document.getElementById('successModal');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
+        // Show loading state
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
         
-        console.log('Form submitted:', { name, email, message });
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        contactForm.reset();
+        const formData = new FormData(contactForm);
+        
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            // Show success modal regardless of response
+            // (FormSubmit may return redirect even on success)
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                contactForm.reset();
+                showSuccessModal();
+            }, 1000);
+            
+        } catch (error) {
+            console.error('Error:', error);
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            // Show success modal anyway since FormSubmit handles the email
+            contactForm.reset();
+            showSuccessModal();
+        }
     });
 }
+
+function showSuccessModal() {
+    successModal.classList.add('active');
+}
+
+function closeSuccessModal() {
+    successModal.classList.remove('active');
+}
+
+// Close modal when clicking outside
+successModal?.addEventListener('click', (e) => {
+    if (e.target === successModal) {
+        closeSuccessModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && successModal.classList.contains('active')) {
+        closeSuccessModal();
+    }
+    if (e.key === 'Escape' && secretModal.classList.contains('active')) {
+        closeSecretModal();
+    }
+});
+
+// ===============================================
+// SECRET MESSAGE MODAL
+// ===============================================
+const secretModal = document.getElementById('secretModal');
+
+function showSecretModal() {
+    secretModal.classList.add('active');
+}
+
+function closeSecretModal() {
+    secretModal.classList.remove('active');
+}
+
+// Close modal when clicking outside
+secretModal?.addEventListener('click', (e) => {
+    if (e.target === secretModal) {
+        closeSecretModal();
+    }
+});
 
 // ===============================================
 // ACTIVE SECTION HIGHLIGHTING

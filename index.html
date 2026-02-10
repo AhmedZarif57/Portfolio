@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zarif | Developer Portfolio</title>
+    <title>Ziyad Ahmed Zarif | Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,10 @@
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-logo">Z</div>
+        <div class="nav-logo" id="navLogo">
+            ZARIF
+            <span class="logo-tooltip">Click to know a secret</span>
+        </div>
         <button class="nav-toggle" id="navToggle">
             <span></span>
             <span></span>
@@ -65,24 +68,29 @@
     <section id="home" class="hero">
         <div class="container">
             <h1 class="hero-title animate-on-scroll" data-animation="fade-up">
-                <span class="glitch" data-text="ZARIF">ZARIF</span>
+                <span class="glitch" data-text="ZIYAD AHMED ZARIF">ZIYAD AHMED ZARIF</span>
             </h1>
-            <p class="hero-subtitle animate-on-scroll" data-animation="fade-up" data-delay="100">CSE Undergraduate & Developer</p>
-            <p class="hero-description animate-on-scroll" data-animation="fade-up" data-delay="200">Building things that actually work, one line at a time.</p>
+            <p class="hero-subtitle animate-on-scroll" data-animation="fade-up" data-delay="100">Software Engineer | Game Developer</p>
+            <p class="hero-description animate-on-scroll" data-animation="fade-up" data-delay="200">CSE Undergraduate at Daffodil International University. Concentrations in Game Development, AI Training, and Project Management.</p>
             <div class="hero-buttons animate-on-scroll" data-animation="fade-up" data-delay="300">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
             
             <div class="hero-social animate-on-scroll" data-animation="fade-up" data-delay="400">
-                <a href="https://github.com/zarif007" target="_blank" class="social-icon">
+                <a href="https://github.com/AhmedZarif57" target="_blank" class="social-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20">
                         <path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/zarif-tanveer-ahamed-13a687203" target="_blank" class="social-icon">
+                <a href="https://www.linkedin.com/in/ziyadahmedzarif/" target="_blank" class="social-icon">
                     <svg viewBox="0 0 24 24" width="20" height="20">
                         <path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/ziyadahmedzarif" target="_blank" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                 </a>
             </div>
@@ -100,43 +108,24 @@
             <h2 class="section-title animate-on-scroll" data-animation="fade-right">[About]</h2>
             <div class="about-content">
                 <div class="about-text animate-on-scroll" data-animation="fade-right" data-delay="100">
-                    <p>CSE undergraduate with an eye for building things that actually work and a habit of taking on projects that should probably be classified as cardio.</p>
-                    <p>Always chasing improvement, learning new skills, and occasionally questioning life choices during late-night coding sessions. Still, this is exactly the kind of energy that shapes great engineers.</p>
-                    
+                    <p>I'm Zarif, a Computer Science & Engineering undergraduate focused on game development, AI, and high-performance systems. I maintain a 4.00 SGPA at Daffodil International University and enjoy building structured, reliable software that holds up under pressure.</p>
+                    <p>I’m also a competitive esports player, having participated in multiple tournaments with strong placements. Competitive gaming shaped how I think—fast decisions, sharp pattern recognition, teamwork, and constant iteration—which directly translates into how I code and solve problems.</p>
+                    <p>From Java and C++ systems to projects built with MVC architecture, secure data handling, and clean logic, I care about one thing: getting better every iteration.</p>
+                </div>
+                
+                <div class="about-stats-container animate-on-scroll" data-animation="fade-left" data-delay="200">
                     <div class="about-stats">
                         <div class="stat">
-                            <div class="stat-value" data-target="500">0</div>
-                            <div class="stat-label">Problems Solved</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" data-target="20">0</div>
+                            <div class="stat-value" data-target="2">0</div>
                             <div class="stat-label">Projects Built</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-value" data-target="3">0</div>
-                            <div class="stat-label">Years Learning</div>
+                            <div class="stat-value" data-target="4">0</div>
+                            <div class="stat-label">Achievements</div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="about-terminal animate-on-scroll" data-animation="fade-left" data-delay="200">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span class="terminal-title">zarif.info</span>
-                        </div>
-                        <div class="terminal-body">
-                            <p><span class="prompt">$</span> cat info.txt</p>
-                            <p class="output">Name: Zarif</p>
-                            <p class="output">Field: Computer Science & Engineering</p>
-                            <p class="output">Status: Building & Learning</p>
-                            <br>
-                            <p><span class="prompt">$</span> ls skills/</p>
-                            <p class="output">problem-solving  debugging  development</p>
-                            <br>
-                            <p><span class="prompt">$</span> echo $INTERESTS</p>
-                            <p class="output">Tech, Development, Innovation</p>
-                            <br>
-                            <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+                        <div class="stat">
+                            <div class="stat-value" data-target="6">0</div>
+                            <div class="stat-label">Core Languages</div>
                         </div>
                     </div>
                 </div>
@@ -148,126 +137,29 @@
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title animate-on-scroll" data-animation="fade-up">[Skills & Expertise]</h2>
-            <div class="skills-grid">
-                <div class="skill-category animate-on-scroll" data-animation="zoom-in" data-delay="0">
-                    <div class="category-icon">💻</div>
-                    <h3>Frontend Development</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>React / Next.js</span>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>TypeScript / JavaScript</span>
-                                <span class="skill-percentage">85%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>HTML / CSS / Sass</span>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="95"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category animate-on-scroll" data-animation="zoom-in" data-delay="150">
-                    <div class="category-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>Node.js / Express</span>
-                                <span class="skill-percentage">88%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>MongoDB / PostgreSQL</span>
-                                <span class="skill-percentage">82%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="82"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>REST APIs / GraphQL</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category animate-on-scroll" data-animation="zoom-in" data-delay="300">
-                    <div class="category-icon">🛠️</div>
-                    <h3>Tools & Others</h3>
-                    <div class="skill-bars">
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>Git / GitHub</span>
-                                <span class="skill-percentage">90%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>Docker / Kubernetes</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar-item">
-                            <div class="skill-bar-label">
-                                <span>AWS / Cloud Services</span>
-                                <span class="skill-percentage">78%</span>
-                            </div>
-                            <div class="skill-bar-track">
-                                <div class="skill-bar-fill" data-width="78"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+            <h3 class="skills-subtitle animate-on-scroll" data-animation="fade-up" data-delay="50">Programming Languages</h3>
+            <div class="tech-stack animate-on-scroll" data-animation="fade-up" data-delay="100">
+                <div class="tech-item">Java</div>
+                <div class="tech-item">Python</div>
+                <div class="tech-item">SQL</div>
+                <div class="tech-item">C++</div>
+                <div class="tech-item">C</div>
+                <div class="tech-item">C#</div>
             </div>
             
+            <h3 class="skills-subtitle animate-on-scroll" data-animation="fade-up" data-delay="50">Tools & Software</h3>
             <div class="tech-stack animate-on-scroll" data-animation="fade-up" data-delay="100">
-                <div class="tech-item">React</div>
-                <div class="tech-item">Node.js</div>
-                <div class="tech-item">TypeScript</div>
-                <div class="tech-item">MongoDB</div>
-                <div class="tech-item">PostgreSQL</div>
-                <div class="tech-item">Next.js</div>
-                <div class="tech-item">Express</div>
-                <div class="tech-item">Tailwind CSS</div>
+                <div class="tech-item">Unity</div>
+                <div class="tech-item">Blender</div>
+                <div class="tech-item">Photoshop</div>
+                <div class="tech-item">Illustrator</div>
+                <div class="tech-item">Premiere Pro</div>
+                <div class="tech-item">Microsoft Office</div>
+                <div class="tech-item">IntelliJ</div>
+                <div class="tech-item">VS Code</div>
+                <div class="tech-item">PyCharm</div>
                 <div class="tech-item">Git</div>
-                <div class="tech-item">Docker</div>
-                <div class="tech-item">AWS</div>
-                <div class="tech-item">GraphQL</div>
-                <div class="tech-item">Redux</div>
-                <div class="tech-item">Socket.io</div>
-                <div class="tech-item">Jest</div>
             </div>
         </div>
     </section>
@@ -280,43 +172,24 @@
                 <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="0">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2023 - Present</div>
-                        <h3>Computer Science & Engineering</h3>
-                        <p class="timeline-company">Bangladesh University of Engineering and Technology (BUET)</p>
-                        <p class="timeline-desc">Pursuing Bachelor's degree in CSE, focusing on software development, algorithms, and system design.</p>
+                        <div class="timeline-date">Expected Graduation: May 2028</div>
+                        <h3>B.Sc. in Computer Science & Engineering</h3>
+                        <p class="timeline-company">Daffodil International University, Dhaka, Bangladesh</p>
+                        <div class="sgpa-badge">SGPA: <span class="sgpa-value">4.0</span></div>
+                        <p class="timeline-desc">Concentrations in Game Development, AI Training, and Project Management.</p>
                     </div>
                 </div>
                 
-                <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="100">
+<!--                <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="100">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2024 - Present</div>
-                        <h3>Full Stack Developer</h3>
-                        <p class="timeline-company">Freelance Projects</p>
-                        <p class="timeline-desc">Built multiple web applications for clients using React, Node.js, and cloud technologies. Specialized in e-commerce and real-time applications.</p>
+                        <div class="timeline-date">July 2020 - Jan 2021</div>
+                        <h3>Web Developer</h3>
+                        <p class="timeline-company">Savar Cantonment Board Boys High School, Savar Cantonment, Dhaka</p>
+                        <p class="timeline-desc">Developed a responsive school website and organized academic resources into a clear, user-friendly layout.</p>
                     </div>
                 </div>
-                
-                <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="200">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3>Open Source Contributor</h3>
-                        <p class="timeline-company">Various Projects</p>
-                        <p class="timeline-desc">Contributed to open-source projects, fixing bugs and implementing new features. Active in the developer community.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item animate-on-scroll" data-animation="slide-right" data-delay="300">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - 2023</div>
-                        <h3>Competitive Programming</h3>
-                        <p class="timeline-company">Codeforces, LeetCode, HackerRank</p>
-                        <p class="timeline-desc">Solved 500+ algorithmic problems across multiple platforms. Strengthened problem-solving and optimization skills.</p>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -326,51 +199,38 @@
             <h2 class="section-title animate-on-scroll" data-animation="fade-up">[Projects]</h2>
             <div class="projects-grid">
                 <div class="project-card animate-on-scroll" data-animation="flip-up" data-delay="0">
-                    <div class="project-number">01</div>
-                    <h3 class="project-title">E-Commerce Platform</h3>
-                    <p class="project-desc">Full-stack online marketplace with secure payments, inventory management, and user authentication.</p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
+                    <h3 class="project-title">💰 Smart Money Manager (Java)</h3>
+                    <div class="project-features">
+                        <div class="feature-item">🔐 Enterprise-level security with encrypted JSON storage</div>
+                        <div class="feature-item">💳 Multi-currency support with real-time analytics</div>
+                        <div class="feature-item">📊 Interactive charts & customizable dashboard</div>
+                        <div class="feature-item">🎨 Dark-mode themed UI with seamless navigation</div>
                     </div>
-                    <a href="https://github.com/zarif007" class="project-link" target="_blank">View Project →</a>
+                    <div class="project-tags">
+                        <span>Java</span>
+                        <span>JavaFX</span>
+                        <span>MVC</span>
+                        <span>JSON</span>
+                        <span>Security</span>
+                    </div>
+                    <a href="https://github.com/AhmedZarif57/money-manager" class="btn btn-secondary" target="_blank"><span>View Project</span></a>
                 </div>
 
                 <div class="project-card animate-on-scroll" data-animation="flip-up" data-delay="100">
-                    <div class="project-number">02</div>
-                    <h3 class="project-title">Real-Time Chat App</h3>
-                    <p class="project-desc">WebSocket-based messaging application with private chats, group rooms, and file sharing.</p>
-                    <div class="project-tags">
-                        <span>Socket.io</span>
-                        <span>Express</span>
-                        <span>React</span>
+                    <h3 class="project-title">🏨 Hotel Reservation System (C++)</h3>
+                    <div class="project-features">
+                        <div class="feature-item">🎯 Intuitive menu-driven interface for seamless booking</div>
+                        <div class="feature-item">💾 Persistent file storage with robust data management</div>
+                        <div class="feature-item">🔄 Full CRUD operations: create, modify, and cancel reservations</div>
+                        <div class="feature-item">✅ Advanced validation & error handling for data integrity</div>
                     </div>
-                    <a href="https://github.com/zarif007" class="project-link" target="_blank">View Project →</a>
-                </div>
-
-                <div class="project-card animate-on-scroll" data-animation="flip-up" data-delay="200">
-                    <div class="project-number">03</div>
-                    <h3 class="project-title">Task Manager</h3>
-                    <p class="project-desc">Project management tool with Kanban boards, team collaboration, and deadline tracking.</p>
                     <div class="project-tags">
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>PostgreSQL</span>
+                        <span>C++</span>
+                        <span>OOP</span>
+                        <span>File Handling</span>
+                        <span>Data Management</span>
                     </div>
-                    <a href="https://github.com/zarif007" class="project-link" target="_blank">View Project →</a>
-                </div>
-
-                <div class="project-card animate-on-scroll" data-animation="flip-up" data-delay="300">
-                    <div class="project-number">04</div>
-                    <h3 class="project-title">Algorithm Visualizer</h3>
-                    <p class="project-desc">Interactive platform to visualize sorting and pathfinding algorithms for learning.</p>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>D3.js</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <a href="https://github.com/zarif007" class="project-link" target="_blank">View Project →</a>
+                    <a href="https://github.com/AhmedZarif57" class="btn btn-secondary" target="_blank"><span>View Project</span></a>
                 </div>
             </div>
         </div>
@@ -383,59 +243,69 @@
             <div class="achievements-grid">
                 <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="0">
                     <div class="achievement-icon">🏆</div>
-                    <h3>500+ Problems Solved</h3>
-                    <p>Across Codeforces, LeetCode, and HackerRank platforms</p>
+                    <h3>1st Position - JUSC National Math Olympiad</h3>
+                    <p>Secured top position in a national-level competition.</p>
                 </div>
                 
                 <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="100">
-                    <div class="achievement-icon">⭐</div>
-                    <h3>Top Contributor</h3>
-                    <p>Recognized contributor in multiple open-source projects</p>
+                    <div class="achievement-icon">🥈</div>
+                    <h3>2nd Position - DIU Science Olympiad</h3>
+                    <p>Recognized for strong performance in science competitions.</p>
                 </div>
                 
                 <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="200">
-                    <div class="achievement-icon">🎓</div>
-                    <h3>BUET CSE Student</h3>
-                    <p>Admitted to one of the most prestigious engineering universities</p>
-                </div>
-                
-                <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="300">
-                    <div class="achievement-icon">💡</div>
-                    <h3>Hackathon Participant</h3>
-                    <p>Participated in multiple national-level hackathons</p>
-                </div>
-                
-                <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="400">
                     <div class="achievement-icon">🚀</div>
-                    <h3>15+ Projects Deployed</h3>
-                    <p>Successfully launched and maintained production applications</p>
-                </div>
-                
-                <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="500">
-                    <div class="achievement-icon">🌟</div>
-                    <h3>Community Builder</h3>
-                    <p>Active in tech communities, helping fellow developers</p>
-                </div>
-            </div>
+                    <h3>12th Position - Takeoff Programming Competition</h3>
+                    <p>Earned a competitive placement in programming contest.</p>
+                </div>                
+                <div class="achievement-card animate-on-scroll" data-animation="bounce-in" data-delay="300">
+                    <div class="achievement-icon">🔓</div>
+                    <h3>21st Position - DIU Unlock the Algorithm</h3>
+                    <p>Secured competitive placement in DIU's algorithm competition.</p>
+                </div>            </div>
             
             <div class="certifications animate-on-scroll" data-animation="fade-up" data-delay="100">
-                <h3 class="cert-title">Certifications & Learning</h3>
+                <h3 class="cert-title">Coursework & Concentrations</h3>
                 <div class="cert-list">
-                    <div class="cert-item">
-                        <span class="cert-badge">✓</span>
-                        <span>Advanced Web Development</span>
-                    </div>
                     <div class="cert-item">
                         <span class="cert-badge">✓</span>
                         <span>Data Structures & Algorithms</span>
                     </div>
                     <div class="cert-item">
                         <span class="cert-badge">✓</span>
-                        <span>Cloud Computing Fundamentals</span>
+                        <span>Objects & Design</span>
                     </div>
                     <div class="cert-item">
                         <span class="cert-badge">✓</span>
-                        <span>Database Management Systems</span>
+                        <span>Artificial Intelligence</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Computer Organization & Programming</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Object-Oriented Programming</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Statistics</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Game Development (Concentration)</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>AI Training (Concentration)</span>
+                    </div>
+                    <div class="cert-item">
+                        <span class="cert-badge">✓</span>
+                        <span>Project Management (Concentration)</span>
                     </div>
                 </div>
             </div>
@@ -455,7 +325,14 @@
                             <span class="detail-icon">📧</span>
                             <div>
                                 <div class="detail-label">Email</div>
-                                <div class="detail-value">zarif@example.com</div>
+                                <div class="detail-value">dropbyzarif@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="detail-icon">📞</span>
+                            <div>
+                                <div class="detail-label">Phone</div>
+                                <div class="detail-value">(+880) 1935324855</div>
                             </div>
                         </div>
                         <div class="contact-detail">
@@ -475,22 +352,29 @@
                     </div>
                     
                     <div class="contact-links">
-                        <a href="https://github.com/zarif007" target="_blank" class="contact-link">
+                        <a href="https://github.com/AhmedZarif57" target="_blank" class="contact-link">
                             <span>GitHub</span>
                             <span>→</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/zarif-tanveer-ahamed-13a687203" target="_blank" class="contact-link">
+                        <a href="https://www.linkedin.com/in/ziyadahmedzarif/" target="_blank" class="contact-link">
                             <span>LinkedIn</span>
                             <span>→</span>
                         </a>
-                        <a href="mailto:zarif@example.com" class="contact-link">
+                        <a href="https://www.facebook.com/ziyadahmedzarif" target="_blank" class="contact-link">
+                            <span>Facebook</span>
+                            <span>→</span>
+                        </a>
+                        <a href="mailto:dropbyzarif@gmail.com" class="contact-link">
                             <span>Email</span>
                             <span>→</span>
                         </a>
                     </div>
                 </div>
 
-                <form class="contact-form animate-on-scroll" data-animation="fade-left" data-delay="200" id="contactForm">
+                <form class="contact-form animate-on-scroll" data-animation="fade-left" data-delay="200" id="contactForm" action="https://formsubmit.co/dropbyzarif@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Name" required>
                     </div>
@@ -500,7 +384,10 @@
                     <div class="form-group">
                         <textarea name="message" rows="5" placeholder="Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loader" style="display: none;">Sending...</span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -511,7 +398,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="footer-logo">ZARIF</div>
+                    <div class="footer-logo">ZIYAD AHMED ZARIF</div>
                     <p class="footer-tagline">Building the future, one line at a time.</p>
                 </div>
                 
@@ -525,9 +412,10 @@
                     </div>
                     <div class="footer-column">
                         <h4>Connect</h4>
-                        <a href="https://github.com/zarif007" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/zarif-tanveer-ahamed-13a687203" target="_blank">LinkedIn</a>
-                        <a href="mailto:zarif@example.com">Email</a>
+                        <a href="https://github.com/AhmedZarif57" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/ziyadahmedzarif/" target="_blank">LinkedIn</a>
+                        <a href="https://www.facebook.com/ziyadahmedzarif" target="_blank">Facebook</a>
+                        <a href="mailto:dropbyzarif@gmail.com">Email</a>
                     </div>
                     <div class="footer-column">
                         <h4>Quick Links</h4>
@@ -539,11 +427,40 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Zarif. Built with curiosity and determination.</p>
+                <p>&copy; 2026 Ziyad Ahmed Zarif. Built with curiosity and determination.</p>
                 <p class="footer-made">Designed & Developed with 💚</p>
             </div>
         </div>
     </footer>
+
+    <!-- Secret Message Modal -->
+    <div class="secret-modal" id="secretModal">
+        <div class="secret-content">
+<!--         <div class="secret-header">🎮</div> -->   
+            <h3 class="secret-title">Here's a secret!</h3>
+            <p class="secret-message">I play PUBG & FC a lot. Contact me if you want to team up! 🎮</p>
+            <button class="btn btn-primary secret-close" onclick="closeSecretModal()">
+                <span>Cool!</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">✓</div>
+                <h3 class="modal-title">Message Sent Successfully!</h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">Thank you for reaching out! Your message has been transmitted successfully.</p>
+                <p class="modal-subtext">I'll get back to you as soon as possible.</p>
+            </div>
+            <button class="btn btn-primary modal-close" onclick="closeSuccessModal()">
+                <span>Close</span>
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
